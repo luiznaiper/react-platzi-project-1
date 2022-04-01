@@ -21,7 +21,6 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('')
   const completedTodos = todos.filter( todo => !!todo.completed).length
   const totalTodos = todos.length
- // const [delTodos, deleteTodos] = React.useState([])
 
 
   let searchedTodos = []
@@ -36,10 +35,10 @@ function App() {
     })
   }
 
-  const completeTodo = (text)=> {
+  const toggleCompleteTodo = (text)=> {
     const todoIndex = todos.findIndex(todo => todo.text === text)
     const newTodos = [...todos]
-    newTodos[todoIndex].completed = true
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos)
   }
 
@@ -74,7 +73,7 @@ function App() {
              key={ todo.text }
              text={ todo.text }
              completed={ todo.completed }
-             onComplete={ ()=> completeTodo(todo.text) }
+             onComplete={ ()=> toggleCompleteTodo(todo.text) }
              onDelete={ ()=> deleteTodo(todo.text) }
            />
         ))}
