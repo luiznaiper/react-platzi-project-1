@@ -1,0 +1,7 @@
+.ClearCompletedButton{
+    text-decoration: underline;
+    color: gray;
+    cursor: pointer;
+    font-style: italic;
+    margin-top: 30px;
+}

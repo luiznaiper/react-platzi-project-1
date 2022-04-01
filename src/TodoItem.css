@@ -1,0 +1,14 @@
+span{
+    cursor: pointer;
+}
+
+.Todo-check-active{
+color: green;
+}
+.Todo-p-complete{
+    text-decoration: line-through;
+}
+
+.Todo-delete:hover{
+    color: red;
+}
