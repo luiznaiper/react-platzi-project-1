@@ -21,6 +21,8 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('')
   const completedTodos = todos.filter( todo => !!todo.completed).length
   const totalTodos = todos.length
+ // const [delTodos, deleteTodos] = React.useState([])
+
 
   let searchedTodos = []
 
@@ -49,7 +51,11 @@ function App() {
   }
 
   const deleteCompletedTodos = ()=> {
-    alert('Delete tasks')
+    const filterTodos = todos.filter(todo => todo.completed === true)
+    const newFilterTodos = [...todos]
+    console.log(filterTodos)
+    newFilterTodos.splice(filterTodos)
+    setTodos(newFilterTodos)
   }
 
   return (
