@@ -50,11 +50,9 @@ function App() {
   }
 
   const deleteCompletedTodos = ()=> {
-    const filterTodos = todos.filter(todo => todo.completed === true)
-    const newFilterTodos = [...todos]
+    const filterTodos = todos.filter(todo => todo.completed === false)
     console.log(filterTodos)
-    newFilterTodos.splice(filterTodos)
-    setTodos(newFilterTodos)
+    setTodos(filterTodos)
   }
 
   return (
@@ -80,6 +78,8 @@ function App() {
       </TodoList>
       <CreateTodoButton/> 
       <ClearCompletedButton
+        total = { totalTodos }
+        completed={ completedTodos }
         deleteCompletedTodos={ ()=> deleteCompletedTodos()}
       />
     </React.Fragment>   
