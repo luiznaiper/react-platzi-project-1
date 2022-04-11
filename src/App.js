@@ -48,14 +48,26 @@ function App() {
     setTodos(newTodos)
   }
 
-  const HideCompletedTodosFn =(completed)=>{
-    const completedTodosIndex =  todos.findIndex(todo => todo.completed == completed)
+  const HideCompletedTodosFn =()=>{
+    const completedTodos = todos.filter(todo => todo.completed)
+    completedTodos.forEach(el => {
+      el.hide = true
+      console.log(el)
+    })
     const newTodos = [...todos]
-    if (todos[completedTodosIndex]){
-      newTodos[completedTodosIndex].hide = true
-    }
-    console.log(newTodos)
     setTodos(newTodos)
+    
+  }
+
+  const showCompletedTodosFn =()=>{
+    const completedTodos = todos.filter(todo => todo.completed)
+    completedTodos.forEach(el => {
+      el.hide = false
+      console.log(el)
+    })
+    const newTodos = [...todos]
+    setTodos(newTodos)
+    
   }
 
 
@@ -86,7 +98,9 @@ function App() {
       <HideCompletedTodos
         onHide={()=> HideCompletedTodosFn()}
       />      
-      <ShowCompletedTodos />      
+      <ShowCompletedTodos 
+        onHide={()=> showCompletedTodosFn()}
+      />      
    </React.Fragment>
   );
 }
