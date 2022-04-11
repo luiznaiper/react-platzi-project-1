@@ -10,7 +10,9 @@ import './App.css';
 const defaultTodos=[
   {text:'Cut Onion', completed:false, hide: false},
   {text:'Pray to god', completed:false, hide: false},
-  {text:'Kil the killer', completed:false, hide: false}
+  {text:'Kill the killer', completed:false, hide: false},
+  {text:'Feed the dogs', completed:false, hide: false},
+  {text:'Go to the supermarket', completed:false, hide: false}
 ];
 function App() {
 
@@ -46,6 +48,17 @@ function App() {
     setTodos(newTodos)
   }
 
+  const HideCompletedTodosFn =(completed)=>{
+    const completedTodosIndex =  todos.findIndex(todo => todo.completed == completed)
+    const newTodos = [...todos]
+    if (todos[completedTodosIndex]){
+      newTodos[completedTodosIndex].hide = true
+    }
+    console.log(newTodos)
+    setTodos(newTodos)
+  }
+
+
   return (
    <React.Fragment>
       <TodoCounter
@@ -70,7 +83,9 @@ function App() {
         ))}
       </TodoList>
       <CreateTodoButton />      
-      <HideCompletedTodos />      
+      <HideCompletedTodos
+        onHide={()=> HideCompletedTodosFn()}
+      />      
       <ShowCompletedTodos />      
    </React.Fragment>
   );
