@@ -1,0 +1,13 @@
+.TodoCongrats{
+    color: #9ca9f2;
+    text-align: center;
+    display: none;
+}
+
+.TodoCongrats span{
+    color: #f4db7d;
+}
+
+.TodoCongrats .show{
+    display: block;
+}

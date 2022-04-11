@@ -6,6 +6,8 @@ import { TodoItem } from "./TodoItem.js";
 import { CreateTodoButton } from "./CreateTodoButton.js";
 import { HideCompletedTodos } from "./HideCompletedTodos";
 import { ShowCompletedTodos } from "./ShowCompletedTodos";
+import { TodoCongrats } from "./TodoCongrats";
+
 import './App.css';
 const defaultTodos=[
   {text:'Cut Onion', completed:false, hide: false},
@@ -52,7 +54,6 @@ function App() {
     const completedTodos = todos.filter(todo => todo.completed)
     completedTodos.forEach(el => {
       el.hide = true
-      console.log(el)
     })
     const newTodos = [...todos]
     setTodos(newTodos)
@@ -63,7 +64,6 @@ function App() {
     const completedTodos = todos.filter(todo => todo.completed)
     completedTodos.forEach(el => {
       el.hide = false
-      console.log(el)
     })
     const newTodos = [...todos]
     setTodos(newTodos)
@@ -77,7 +77,9 @@ function App() {
         total={totalTodos}
         completed={completedTodos}
       />    
-      {/*TODO CONGRATS!*/}
+      <TodoCongrats
+          total={totalTodos}
+      />
       <TodoSearch 
         searchValue={searchValue}
         setSearchValue={setSearchValue}
