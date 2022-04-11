@@ -6,7 +6,7 @@ function ShowCompletedTodos(props){
     return(
         <button 
             className='ShowCompletedTodos'
-            onClick={props.onHide}
+            onClick={props.onShow}
         >
         Show completed
         </button>

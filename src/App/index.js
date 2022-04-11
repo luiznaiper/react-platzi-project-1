@@ -1,12 +1,5 @@
 import React from "react";
-import { TodoCounter } from "./TodoCounter";
-import { TodoSearch } from "./TodoSearch.js";
-import { TodoList } from "./TodoList.js";
-import { TodoItem } from "./TodoItem.js";
-import { CreateTodoButton } from "./CreateTodoButton.js";
-import { HideCompletedTodos } from "./HideCompletedTodos";
-import { ShowCompletedTodos } from "./ShowCompletedTodos";
-import { TodoCongrats } from "./TodoCongrats";
+import { AppUI } from "./AppUI"
 
 import './App.css';
 const defaultTodos=[
@@ -50,7 +43,7 @@ function App() {
     setTodos(newTodos)
   }
 
-  const HideCompletedTodosFn =()=>{
+  const hideCompletedTodosFn =()=>{
     const completedTodos = todos.filter(todo => todo.completed)
     completedTodos.forEach(el => {
       el.hide = true
@@ -72,39 +65,18 @@ function App() {
 
 
   return (
-   <React.Fragment>
-      <TodoCounter
-        total={totalTodos}
-        completed={completedTodos}
-      />    
-      <TodoCongrats
-          total={totalTodos}
-      />
-      <TodoSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <TodoList>
-        {searchedTodos.map(todo =>(
-          <TodoItem 
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={()=> toggleCompleteTodo (todo.text)}
-            onDelete={()=> deleteTodo (todo.text)}
-            hide={todo.hide}
-           />
-        ))}
-      </TodoList>
-      <CreateTodoButton />      
-      <HideCompletedTodos
-        onHide={()=> HideCompletedTodosFn()}
-      />      
-      <ShowCompletedTodos 
-        onHide={()=> showCompletedTodosFn()}
-      />      
-   </React.Fragment>
-  );
+   <AppUI
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      toggleCompleteTodo={toggleCompleteTodo}
+      deleteTodo={deleteTodo}
+      hideCompletedTodosFn={hideCompletedTodosFn}
+      showCompletedTodosFn={showCompletedTodosFn}
+   />
+  )
 }
 
 export default App;
