@@ -9,6 +9,8 @@ import { ShowCompletedTodos } from "../ShowCompletedTodos";
 import { TodoCongrats } from "../TodoCongrats";
 
 function AppUI({
+      loading,
+      error,
       totalTodos,
       completedTodos,
       searchValue,
@@ -33,6 +35,10 @@ function AppUI({
         setSearchValue={setSearchValue}
       />
       <TodoList>
+        { error && <p>We have an error, reload the page...</p> }
+        { loading && <p>Loading, be patient...</p> }
+        { (!loading && !searchedTodos.length) && <p> Create your first Task </p> }
+
         {searchedTodos.map(todo =>(
           <TodoItem 
             key={todo.text}
