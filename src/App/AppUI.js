@@ -4,10 +4,12 @@ import { TodoCounter } from "../TodoCounter"
 import { TodoSearch } from "../TodoSearch/index.js"
 import { TodoList } from "../TodoList/index.js"
 import { TodoItem } from "../TodoItem/index.js"
+import { TodoForm } from '../TodoForm'
 import { CreateTodoButton } from "../CreateTodoButton/index.js"
 import { HideCompletedTodos } from "../HideCompletedTodos"
 import { ShowCompletedTodos } from "../ShowCompletedTodos"
 import { TodoCongrats } from "../TodoCongrats"
+import { Modal } from '../Modal'
 
 function AppUI(){
     const {
@@ -17,7 +19,9 @@ function AppUI(){
       toggleCompleteTodo, 
       deleteTodo,
       hideCompletedTodosFn,
-      showCompletedTodosFn
+      showCompletedTodosFn,
+      openModal,
+      setOpenModal
     } = React.useContext(TodoContext)
     return(
    <React.Fragment>
@@ -40,7 +44,14 @@ function AppUI(){
               />
            ))}
          </TodoList>
-      <CreateTodoButton />      
+        {!!openModal && (
+           <Modal>
+            <TodoForm/>
+           </Modal>
+        )}
+      <CreateTodoButton 
+        setOpenModal={ setOpenModal }
+      />      
       <HideCompletedTodos
        onHide={()=> hideCompletedTodosFn()}
       />      

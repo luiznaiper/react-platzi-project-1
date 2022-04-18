@@ -10,3 +10,4 @@ const root = ReactDom.createRoot(rootElement);
 root.render(
     <App/>
 );
+
