@@ -29,7 +29,7 @@ function TodoProvider(props){
       }
     
       const toggleCompleteTodo = (text)=> {
-        const todoIndex = todos.findIndex(todo => todo.text == text)
+        const todoIndex = todos.findIndex(todo => todo.text === text)
         const newTodos = [...todos]
         todos[todoIndex].completed = !newTodos[todoIndex].completed
         saveTodos(newTodos)
@@ -37,7 +37,7 @@ function TodoProvider(props){
     
       
       const deleteTodo = (text)=> {
-        const todoIndex = todos.findIndex(todo => todo.text == text)
+        const todoIndex = todos.findIndex(todo => todo.text === text)
         const newTodos = [...todos]
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
