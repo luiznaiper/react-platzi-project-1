@@ -33,9 +33,9 @@ function AppUI(){
       <TodoCongrats/>
       <TodoSearch/>
            <TodoList>
-           { error && <p>We have an error, reload the page...</p> }
-           { loading && <p>Loading, be patient...</p> }
-           { (!loading && !searchedTodos.length) && <p> Create your first Task </p> }
+           { error && <TodosError error={error}/> }
+           { loading && new Array(3).fill(1).map((a,i) => <TodosLoading key={i}/>) }
+           { (!loading && !searchedTodos.length) && <EmptyTodos /> }
    
            {searchedTodos.map(todo =>(
              <TodoItem 
