@@ -10,6 +10,10 @@ import { HideCompletedTodos } from "../HideCompletedTodos"
 import { ShowCompletedTodos } from "../ShowCompletedTodos"
 import { TodoCongrats } from "../TodoCongrats"
 import { Modal } from '../Modal'
+import { TodosError } from '../TodosError'
+import { TodosLoading } from '../TodosLoading'
+import { EmptyTodos } from '../EmptyTodos'
+
 
 function AppUI(){
     const {
