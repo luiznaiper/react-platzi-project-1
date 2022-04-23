@@ -43,7 +43,7 @@ function App() {
              totalTodos={totalTodos}
              completedTodos={completedTodos}
            />    
-           <TodoCongrats/>
+           
            <TodoSearch
                  searchValue={searchValue}
                  setSearchValue={setSearchValue} 
@@ -52,8 +52,9 @@ function App() {
             <TodoList>
             { error && <TodosError error={error}/> }
             { loading && new Array(3).fill(1).map((a,i) => <TodosLoading key={i}/>) }
-            { (!loading && !searchedTodos.length) && <EmptyTodos /> }
-    
+            { (!loading && !searchedTodos.length) && <EmptyTodos/> }
+            {(!loading && completedTodos === totalTodos && totalTodos > 0) && <TodoCongrats/>}
+
             {searchedTodos.map(todo =>(
               <TodoItem 
                 key={todo.text}

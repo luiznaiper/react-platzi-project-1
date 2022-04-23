@@ -1,12 +1,8 @@
 import React from "react"
 import './TodoCongrats.css'
 
-function TodoCongrats(props){
+function TodoCongrats(){
    
-    const onCompleteTodos = ()=> {
-        console.log(onCompleteTodos)
-    }
-
     return(
         <p 
             className={`TodoCongrats`}
