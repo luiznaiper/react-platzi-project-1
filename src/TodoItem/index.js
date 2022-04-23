@@ -6,13 +6,13 @@ import './TodoItem.css'
 function TodoItem(props) {
     
     return (
-      <li className="TodoItem">
+      <li className={`TodoItem ${props.hide && 'TodoItem-p--hide'}`}>
         <CompleteIcon
           completed={props.completed}
           onComplete={props.onComplete}
         />
         <p 
-          className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'} ${props.hide && 'TodoItem-p--hide'}`}
+          className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}
         >
           {props.text}
         </p>

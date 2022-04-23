@@ -30,3 +30,7 @@
 .Icon-container:hover .Icon-svg--delete{
     fill: red;
 }
+
+.Icon-container-hide{
+    display: none;
+}
