@@ -2,7 +2,11 @@ import React from 'react'
 import './EmptyTodos.css'
 
 function EmptyTodos(){
-    return <p>Place your first Task :)</p>
+    return <p 
+              className='empty-todos--p'
+            >
+            Place your first <span>Task :)</span> 
+            </p>
 }
 
 export { EmptyTodos }
