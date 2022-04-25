@@ -10,7 +10,7 @@ function TodoSearch({ searchValue, setSearchValue, loading }){
     return(
         <input 
             className="TodoSearch" 
-            placeholder="Search ur tasks here!" 
+            placeholder="Search your tasks here!" 
             value={searchValue}
             onChange={onSearchValueChange}
             disabled={loading}
