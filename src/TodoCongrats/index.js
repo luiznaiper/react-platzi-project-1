@@ -7,7 +7,7 @@ function TodoCongrats(){
         <p 
             className={`TodoCongrats`}
         >
-        <span>¡Congratulations! </span> You finished all the tasks
+        <span>Congratulations! </span> You finished all the tasks
         </p>
     );
 }
