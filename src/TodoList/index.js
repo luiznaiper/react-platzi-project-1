@@ -16,7 +16,7 @@ function TodoList(props){
             
             {(!props.loading && props.completedTodos === props.totalTodos && props.totalTodos > 0) && props.onTodoCongrats()}
             
-            {props.searchedTodos.map(renderFunc)}
+            {(!props.loading && !props.error) &&props.searchedTodos.map(renderFunc)}
 
 
         </section>
