@@ -18,9 +18,7 @@ function TodoList(props){
             
             {props.searchedTodos.map(renderFunc)}
 
-            <ul>
-                {props.children}
-            </ul>
+
         </section>
     );
 }

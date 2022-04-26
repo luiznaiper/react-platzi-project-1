@@ -15,7 +15,7 @@ import { TodosError } from '../TodosError'
 import { TodosLoading } from '../TodosLoading'
 import { EmptyTodos } from '../EmptyTodos'
 import { EmptySearchedResults } from "../EmptySearchedResults"
-
+import { ChangeAlertWithStorageListener } from "../ChangeAlert";
 
 import './App.css';
 
@@ -35,7 +35,8 @@ function App() {
     completedTodos,
     searchValue, 
     setSearchValue,
-    addTodo
+    addTodo,
+    sincronizeTodos
   }  = useTodos()
   return(
     <React.Fragment>
@@ -103,6 +104,10 @@ function App() {
        <ShowCompletedTodos 
          onShow={()=> showCompletedTodosFn()}
        />      
+
+       <ChangeAlertWithStorageListener
+        sincronize={sincronizeTodos}
+       />
     </React.Fragment>
    )
 }
