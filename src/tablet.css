@@ -1,0 +1,23 @@
+
+@media only screen and (min-width: 780px) {
+    header{
+        width: 700px;
+        margin: 0 auto;
+    }
+    .TodoList-container{
+        width: 700px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1em;
+        column-gap: 10px;
+    }
+    .LoadingTodo-container{
+        width: 700px;
+    }
+    .TodoCongrats{
+        
+    }
+
+    
+}

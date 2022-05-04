@@ -6,7 +6,7 @@ function HideCompletedTodos(props){
     return(
         <button 
             className='HideCompletedTodos'
-            onClick={props.onHide}
+            onClick={props.onHide}  
             >
             Hide completed
         </button>
