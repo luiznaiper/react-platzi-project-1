@@ -64,16 +64,6 @@ function App() {
               onEmptySearchResults={() => <EmptyTodos/>}
               onTodoCongrats={() => <TodoCongrats/>}
               onEmptySearchedResults={(searchValue) => <EmptySearchedResults searchValue={searchValue}/>}
-              // render={todo =>(
-              //   <TodoItem 
-              //     key={todo.text}
-              //     text={todo.text}
-              //     completed={todo.completed}
-              //     onComplete={()=> toggleCompleteTodo (todo.text)}
-              //     onDelete={()=> deleteTodo (todo.text)}
-              //     hide={todo.hide}
-              //    />
-              // )}
             >
               {todo =>(
                 <TodoItem 
