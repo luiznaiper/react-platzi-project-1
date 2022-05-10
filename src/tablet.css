@@ -23,5 +23,9 @@
         margin: 0 auto;
         display: flex;
     }
+    .empty-todos--p{
+        margin: 0 auto;
+        margin-top: 20px;
+    }
     
 }
