@@ -7,17 +7,21 @@
     .TodoList-container{
         width: 700px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 1em;
-        column-gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
     }
     .LoadingTodo-container{
         width: 700px;
     }
     .TodoCongrats{
-        
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 20px;
     }
-
+    .TodoItem{
+        width: 300px;
+        margin: 0 auto;
+        display: flex;
+    }
     
 }
