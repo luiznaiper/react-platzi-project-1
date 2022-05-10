@@ -70,25 +70,29 @@ function useTodos(){
         saveTodos(newTodos)
         
       }
-    return(
-        { 
-            error,
-            loading,
-            totalTodos,
-            completedTodos,
-            searchValue,
+
+      const states = {
+        error,
+        loading,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        searchedTodos,
+        openModal,
+      }
+
+      const stateUpdates ={
             setSearchValue,
-            searchedTodos,
             toggleCompleteTodo,
             addTodo,
             deleteTodo,
             hideCompletedTodosFn,
             showCompletedTodosFn,
-            openModal,
             setOpenModal,
             sincronizeTodos
-         }
-    )
+      }
+
+    return{ states, stateUpdates }
 }
 
 export { useTodos }

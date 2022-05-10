@@ -22,22 +22,31 @@ import './App.css';
 
 function App() {  
   const {
-    error, 
-    loading, 
-    searchedTodos, 
-    toggleCompleteTodo, 
-    deleteTodo,
-    hideCompletedTodosFn,
-    showCompletedTodosFn,
-    openModal,
-    setOpenModal,
-    totalTodos,
-    completedTodos,
-    searchValue, 
-    setSearchValue,
-    addTodo,
-    sincronizeTodos
+    states,
+    stateUpdates
   }  = useTodos()
+
+const {
+        error,
+        loading,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        searchedTodos,
+        openModal,
+} = states
+
+const {
+          setSearchValue,
+          toggleCompleteTodo,
+          addTodo,
+          deleteTodo,
+          hideCompletedTodosFn,
+          showCompletedTodosFn,
+          setOpenModal,
+          sincronizeTodos
+} = stateUpdates
+
   return(
     <React.Fragment>
        <TodoHeader loading={loading}>
